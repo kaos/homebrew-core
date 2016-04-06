@@ -6,8 +6,10 @@ class BatsSupport < Formula
   depends_on "bats"
 
   def install
-    system "mkdir", "bats-support"
-    system "mv", "load.bash", "src", "test", "bats-support/"
+    mkdir "bats-support"
+    mv "load.bash", "bats-support/"
+    mv "src", "bats-support/"
+    mv "test", "bats-support/"
     lib.install "bats-support"
     ohai "Use `load '/usr/local/lib/bats-support/load'` in your bats test to load this library."
   end
